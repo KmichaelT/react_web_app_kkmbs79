@@ -33,17 +33,19 @@ export default  function Posts(props) {
     
     return (<>
     
-            <form onSubmit={handleForm}  className="position-relative" style={{ height: '400px'}} > 
-                <div className="ps-4 row w-50 position-absolute top-50 start-50 translate-middle">
+            <form onSubmit={handleForm}  className="position-relative " style={{ height: '400px'}} > 
+                <div className="ps-4 row w-75 position-absolute top-50 start-50 translate-middle">
                     <div  className=" col-9">
                         <input style={{ height: '60px'}} type="text" className="  form-control" name='name'  placeholder="Enter Students Name"/>
+                        
                     </div>
                     <div className=" col-3">
                         <button  style={{ height: '60px'}} type="submit" className="btn btn-dark ">See Post</button>
                     </div>
+                    
                 </div>
             </form>
-            <Post name={name} title={title} body={body}/>
+            {post ? <Post name={name} title={title} body={body}/> : null}
 
             
             </>);
